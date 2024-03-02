@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Idk_non3
+- 👋 Hi, I’m Idk_non3
 - 👀 I’m interested in Study, learning new things, Coding etc.
 - 🌱 I’m currently learning Python
 - 😄 Pronouns: N/A
