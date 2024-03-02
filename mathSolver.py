@@ -121,8 +121,28 @@ class Circle:
     def printCircleOP():
         global circleOP
         print("\n1. Circumference"
-            "\n2. Area")
+            "\n2. Area"
+            "\n3. Find Radius From Circumference"
+            "\n4. Find Radius From Area")
         circleOP = int(input("Enter Option: "))
+
+    def findRadiusCircumferneceInput():
+        global circumference
+        circumference = float(input("Enter Circumference: "))
+
+    def findRadiusCircumference():
+        global radius
+        Circle.findRadiusCircumferneceInput()
+        radius = float(circumference/(2*pi))
+
+    def findRadiusAreaInput():
+        global area
+        area = float(input("Enter Area: "))
+
+    def findRadiusArea():
+        global radius
+        Circle.findRadiusAreaInput()
+        radius = float(math.sqrt(area)/(2*pi))
 
     def circleArea():
         global area
@@ -218,7 +238,7 @@ def mainStarter():
         "\n5. Circle"
         "\n6. Rectangle"
         "\n7. Triangle")
-    option = input("Enter Value: ")
+    option = int(input("Enter Value: "))
 
 while True:
     mainStarter()
@@ -328,6 +348,16 @@ while True:
             valuetofind = area
             value = "Area"
             power = "cm sq"
+        elif circleOP == 3:
+            Circle.findRadiusCircumference()
+            valuetofind = radius
+            value = "Radius"
+            power = "cm"
+        elif option == 4:
+            Circle.findRadiusArea()
+            valuetofind = radius
+            value = "Radius"
+            power = "cm"
         else:
             print("Option Not Available!")
             sleep(1.5)
@@ -386,4 +416,4 @@ while True:
         continue
 
     roundValue = round(valuetofind, 2)
-    print(value+" Of "+shape+" = "+str(roundValue)+" ",end=power)
+    print("(Rounded Off to 2) "+value+" Of "+shape+" = "+str(roundValue)+" ",end=power)
