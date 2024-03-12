@@ -536,9 +536,11 @@ class CIandSICalc:
             amount = ci+principal
         if isinstance(math.sqrt(amount), float) == True:
             amount = math.cbrt(amount)
+            system("cls")
             print("Time Period is: "+str(amount))
         if isinstance(math.sqrt(amount), int) == True:
             amount = math.sqrt(amount)
+            system("cls")
             print("Time Period is: "+str(amount))
 
     def findPrincipalFromCI():
@@ -605,6 +607,7 @@ class CIandSICalc:
         si = float(principal*rate*timeperiod/100)
     
     def printcisivalues(value1, value2):
+        system("cls")
         print("(Rounded Off to 2) Compound Interest: "+str(round(value1,2)))
         print("(Rounded Off to 2) Amount: "+str(round(value2,2)))
 
@@ -634,11 +637,13 @@ class SpeedTimeDistanceCalc:
             distance = float(input("Enter The Distance In Meters: "))
             timep = float(input("Enter The Time In Seconds: "))
             speed = float(distance/timep)
+            system("cls")
             print("Speed Is: {0}".format(speed),end = ("m/s"))
         if unitop == 2:
             distance = float(input("Enter The Distance In Kilo Meters: "))
             timep = float(input("Enter The Time In Hour: "))
             speed = float(distance/timep)
+            system("cls")
             print("Speed Is: {0}".format(speed),end = ("m/s"))
 
     def findDistance():
@@ -648,11 +653,13 @@ class SpeedTimeDistanceCalc:
             speed = float(input("Enter The Speed In m/s: "))
             timep = float(input("Enter The Time In Seconds: "))
             distance = float(speed*timep)
+            system("cls")
             print("Distance Is: {0}".format(distance),end = ("m"))
         if unitop == 2:
             speed = float(input("Enter The Speed In Kilo Meters: "))
             timep = float(input("Enter The Time In Hour: "))
             distance = float(speed*timep)
+            system("cls")
             print("Distance Is: {0}".format(distance),end = ("km"))
     
     def findTime():
@@ -662,11 +669,13 @@ class SpeedTimeDistanceCalc:
             speed = float(input("Enter The Speed In m/s: "))
             distance = float(input("Enter The Distance In Meters: "))
             timep = float(distance/speed)
+            system("cls")
             print("Distance Is: {0}".format(timep),end = ("Sec"))
         if unitop == 2:
             speed = float(input("Enter The Speed In km/h: "))
             distance = float(input("Enter The Distance In Kilometers: "))
             timep = float(distance/speed)
+            system("cls")
             print("Time Is: {0}".format(timep),end = ("Hrs"))
 
 def shapeStarter():
@@ -1015,6 +1024,7 @@ while True:
             print("Option Not Available!")
             sleep(1.5)
             continue
+        system("cls")
         roundValue = round(valuetofind, 2)
         print("(Rounded Off to 2) "+value+" Of "+shape+" = "+str(roundValue)+" ",end=power)
 
@@ -1028,6 +1038,7 @@ while True:
         if CISIOP == 2:
             system("cls")
             CIandSICalc.FindSimpleInterest()
+            system("cls")
             print("Simple Interest: ",str(si))
         if CISIOP == 3:
             system("cls")
@@ -1038,24 +1049,30 @@ while True:
             CIandSICalc.toFindOP()
             if toFindOPCISI == 1:
                 CIandSICalc.findRateFromSI()
+                system("cls")
                 print("Rate Of Simple Interest: "+str(round(rate, 2)),end="%")
             if toFindOPCISI == 2:
                 CIandSICalc.findTimePeriodFromSI()
+                system("cls")
                 print("Time Period Of Simple Interest: "+str(round(timeperiod, 2)),end="%")
             if toFindOPCISI == 3:
                 CIandSICalc.findPrincipalFromSI()
+                system("cls")
                 print("Principal Of Simple Interest: "+str(round(rate, 2)),end="%")
         if CISIOP == 5:
             system("cls")
             CIandSICalc.toFindOP()
             if toFindOPCISI == 1:
                 CIandSICalc.findRateFromCI()
+                system("cls")
                 print("Rate Of Compound Interest: "+str(round(rate, 2)),end="%")
             if toFindOPCISI == 2:
                 CIandSICalc.findTimePeriodFromCI()
+                system("cls")
                 print("Time Period Of Compound Interest: "+str(round(timeperiod, 2)),end="%")
             if toFindOPCISI == 3:
                 CIandSICalc.findPrincipalFromCI()
+                system("cls")
                 print("Principal Of Compound Interest: "+str(round(rate, 2)),end="%")
 
     if mainoption == 3:
@@ -1070,10 +1087,5 @@ while True:
     
     if mainoption == 4:
         table()
-
-    else:
-        print("Option Not Available!")
-        sleep(1.5)
-        continue
 
 #Made By IDK
