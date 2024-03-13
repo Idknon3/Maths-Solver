@@ -529,19 +529,18 @@ class CIandSICalc:
         principal = float(input("Enter The Principal Amount: "))
         rate = float(input("Enter The Rate Of Interest: "))
         AmOrCI = int(input("Amount/CI [1/2] "))
+        rate = float(1+rate/100)
         if AmOrCI == 1:
             amount = float(input("Enter The Amount: "))
         else:
             ci = float(input("Enter The CI: "))
             amount = ci+principal
-        if isinstance(math.sqrt(amount), float) == True:
-            amount = math.cbrt(amount)
+        if float(math.sqrt(amount/principal)) != float(rate):
+            timeperiod = 3
             system("cls")
-            print("Time Period is: "+str(amount))
-        if isinstance(math.sqrt(amount), int) == True:
-            amount = math.sqrt(amount)
+        if float(math.sqrt(amount/principal)) == float(rate):
+            timeperiod = 2
             system("cls")
-            print("Time Period is: "+str(amount))
 
     def findPrincipalFromCI():
         global rate, principal, timeperiod, ci, AmOrCI, amount
@@ -1069,7 +1068,7 @@ while True:
             if toFindOPCISI == 2:
                 CIandSICalc.findTimePeriodFromCI()
                 system("cls")
-                print("Time Period Of Compound Interest: "+str(round(timeperiod, 2)),end="%")
+                print("Time Period Of Compound Interest: "+str(int(timeperiod)))
             if toFindOPCISI == 3:
                 CIandSICalc.findPrincipalFromCI()
                 system("cls")
