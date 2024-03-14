@@ -402,6 +402,18 @@ class Triangle:
         height = float(input("Enter Height(in cm): "))
         base = float(input("Enter Base(in cm): "))
 
+    def lengthinputTriangle():
+        global length1, length2, length3
+        length1 = float(input("Enter The First Length: "))
+        length2 = float(input("Enter The Second Length: "))
+        length3 = float(input("Enter The Third Length: "))
+
+    def findAreaOfEquilateralTriangle():
+        global triangleArea, triangleHalf
+        Triangle.lengthinputTriangle()
+        triangleHalf = float((length1 + length2 + length3)/2)
+        triangleArea = float(math.sqrt(triangleHalf*((triangleHalf - length1)*(triangleHalf - length2)*(triangleHalf - length3))))
+
     def hypotenuseFindInputsTriangle():
         global perpendicular, base
         perpendicular = float(input("Enter Perpendicular(in cm): "))
@@ -435,10 +447,11 @@ class Triangle:
     def printTriangleOP():
         global triangleOP
         print("\n1. Area"
+            "\n2. Area Of Equilateral Triangle"
             "\n================================"
-            "\n2. Find Hypotenuse"
-            "\n3. Find Perpendicular"
-            "\n4. Find Base")
+            "\n3. Find Hypotenuse"
+            "\n4. Find Perpendicular"
+            "\n5. Find Base")
         triangleOP = int(input("Enter Option: "))
 
     def triangleArea():
@@ -1001,16 +1014,21 @@ while True:
                 value = "Area"
                 power =  "cm sq"
             elif triangleOP == 2:
+                Triangle.findAreaOfEquilateralTriangle()
+                valuetofind = triangleArea
+                value = "Area"
+                power =  "cm sq"
+            elif triangleOP == 3:
                 Triangle.hypotenuseTriangle()
                 valuetofind = hypotenuse
                 value = "Hypotenuse"
                 power =  "cm"
-            elif triangleOP == 3:
+            elif triangleOP == 4:
                 Triangle.perpendicularTriangle()
                 valuetofind = perpendicular
                 value = "Perpendicular"
                 power =  "cm"
-            elif triangleOP == 4:
+            elif triangleOP == 5:
                 Triangle.baseTriangle()
                 valuetofind = base
                 value = "Base"
